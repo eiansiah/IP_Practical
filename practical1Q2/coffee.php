@@ -14,11 +14,12 @@
     </form>
 
     <?php 
-        if(isset($_POST["bags"])){
+        if(isset($_POST["bags"])){ 
             $volumes = array(25 => 5, 50 => 10, 100 => 15, 150 => 20, 200 => 25, 300 => 30);
             $currentOrderedRange = 0;
             $currentDiscount = 1;
 
+            // Search from last index to front
             foreach($volumes as $key => $discount){
                 if($_POST["bags"] >= $key){
                     $currentOrderedRange = $key;
