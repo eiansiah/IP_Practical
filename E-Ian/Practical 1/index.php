@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     </head>
     <body>
         <?php
-            echo "Hello World!";
+            echo "Hello World! Good Luck!";
         ?>
     </body>
 </html>
