@@ -9,15 +9,18 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Check if form is submitted
+    // Check the request comes from the form submission. and checks if the "Add" button was clicked.
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add"])) {
-        // Retrieve and sanitize form data
+        // trim Removes extra spaces.
         $code = trim($_POST["code"]);
         $title = trim($_POST["title"]);
+        // intval Converts input to an integer 
         $credit = intval($_POST["credit"]);
         $yearOfStudy = intval($_POST["year"]);
 
         // Prepare the SQL statement to insert new record
+        // prepare is to prevent SQL injection.
+        // :code, :title are placeholders for actual value
         $stmt = $pdo->prepare("INSERT INTO subjects (code, title, credit, yearOfStudy) VALUES (:code, :title, :credit, :yearOfStudy)");
         
         // Execute the statement with parameters
@@ -62,6 +65,7 @@ try {
     </tr>
     <?php foreach ($subjects as $subject): ?>
     <tr>
+        <!-- htmlspecialchars() ensures special characters (like < and >) are safely displayed. -->
         <td><?= htmlspecialchars($subject['code']) ?></td>
         <td><?= htmlspecialchars($subject['title']) ?></td>
         <td><?= htmlspecialchars($subject['credit']) ?></td>
