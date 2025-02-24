@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$dbname = 'collegedb';
-$username = 'root';  // Change if necessary
-$password = '';      // Change if necessary
+$dbname = 'collegedb'; // The name of the database
+$username = 'root';
+$password = '';      // (empty by default in XAMPP)
 
 try {
     // Establish database connection using PDO
@@ -29,11 +29,12 @@ try {
         ]);
     }
 
-    // Fetch all records from the database
-    $stmt = $pdo->query("SELECT * FROM subjects ORDER BY yearOfStudy, code");
+    // Fetch all records from the database and order by code
+    $stmt = $pdo->query("SELECT * FROM subjects ORDER BY code");
     $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
+    // If the connection fails, stop the script and post message
     die("Database error: " . $e->getMessage());
 }
 ?>
