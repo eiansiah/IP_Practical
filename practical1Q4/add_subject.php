@@ -17,7 +17,7 @@
         header('Location: show_subject.php');
         die();
     }
-?>
+?>  
 
 <body>
     <h1><u>Add New Subject</u></h1>
