@@ -27,7 +27,7 @@
             <?php
             require 'connection1C.php';
 
-            $record = $pdoObj->query("SELECT * FROM collegedb.subjects")->fetchAll();
+            $record = $pdoObj->query("SELECT * FROM subjects")->fetchAll();
             foreach ($record as $row) {
                 echo "
                     <tr>
