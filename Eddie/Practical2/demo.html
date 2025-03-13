@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Management Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Select Role</h2>
+    <form id="roleForm" action="stall.php" method="POST">
+        <input type="radio" name="role" value="admin"> Admin
+        <input type="radio" name="role" value="hawker"> Hawker
+        <input type="radio" name="role" value="guest"> Guest
+        <br><br>
+        <input type="email" name="email" placeholder="Enter Email" autocomplete="off">
+        <button type="submit">Proceed</button>
+    </form>
+</body>
+</html>
+
