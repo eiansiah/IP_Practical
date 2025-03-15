@@ -63,34 +63,43 @@ $conn->close();
 </head>
 <body>
 
-    <?php if (!empty($emailErr)) { echo "<p style='color: red;'>$emailErr</p>"; } ?>
-
-    <h3>Stall Database</h3>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Stall ID</th>
-                <th>Stall Owner</th>
-                <th>Description</th>
-                <th>Fee</th>
-                <th>Availability</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($stalls as $stall): ?>
-                <tr class="<?= $stall['Availability'] ? 'available' : 'occupied' ?>">
-                    <td><?= htmlspecialchars($stall['StallID']) ?></td>
-                    <td><?= $stall['StallOwner'] ?: 'None' ?></td>
-                    <td><?= htmlspecialchars($stall['Description']) ?></td>
-                    <td><?= htmlspecialchars($stall['Fee']) ?></td>
-                    <td><?= $stall['Availability'] ? "Available" : "Occupied" ?></td>
+    <?php if (empty($email) || $role == "guest"): ?>
+        <p style="color: red;"><?= htmlspecialchars($emailErr) ?></p>
+        <script>
+            setTimeout(function() { 
+                window.history.back(); 
+            }, 5000);
+        </script>
+    <?php endif; ?>
+    
+    <?php if (($role == "hawker" && !empty($email)) || ($role == "admin" && $email == $admin_email)): ?>
+        <h3>Stall Database</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Stall ID</th>
+                    <th>Stall Owner</th>
+                    <th>Description</th>
+                    <th>Fee</th>
+                    <th>Availability</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($stalls as $stall): ?>
+                    <tr class="<?= $stall['Availability'] ? 'available' : 'occupied' ?>">
+                        <td><?= htmlspecialchars($stall['StallID']) ?></td>
+                        <td><?= $stall['StallOwner'] ?: 'None' ?></td>
+                        <td><?= htmlspecialchars($stall['Description']) ?></td>
+                        <td><?= htmlspecialchars($stall['Fee']) ?></td>
+                        <td><?= $stall['Availability'] ? "Available" : "Occupied" ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
 
     <!-- Hawkers: Request a Stall -->
-    <?php if ($role == "hawker"): ?>
+    <?php if ($role == "hawker" && !empty($email)): ?>
         <h3>Request a Stall</h3>
         <form method="POST" action="stall_action.php" autocomplete="off">
             <label for="stall_id">Stall ID:</label>
@@ -102,7 +111,7 @@ $conn->close();
         </form>
     <?php endif; ?>
 
-    <!--Admin: Allocate a Stall (Only if email matches admin and role is admine) -->
+    <!--Admin: Allocate a Stall (Only if email matches admin and role is admin) -->
     <?php if ($role == "admin" && $email == $admin_email): ?>
         <h3>Allocate a Stall</h3>
         <form method="POST" action="stall_action.php" autocomplete="off">
@@ -115,6 +124,10 @@ $conn->close();
             <input type="text" name="stall_description" required>
             <button type="submit" name="allocate_stall">Allocate Stall</button>
         </form>
+    <?php endif; ?>
+        
+    <?php if ($role == "guest"): ?>
+        <h3>You do not have permission to allocate or request stalls.</h3>
     <?php endif; ?>
 
 </body>
