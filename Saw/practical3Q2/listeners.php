@@ -5,7 +5,8 @@
 
         public function update(\SplSubject $subject): void
         {
-            $this->temperature = end($subject->getTemperature())[0];
+            $temp = $subject->getTemperature();
+            $this->temperature = end($temp)[0];
             $this->humidity = $subject->getHumidity();
 
             $this->display();
