@@ -2,7 +2,7 @@
 require_once 'PayPalInterface.php';
 require_once 'StripeInterface.php';
 // Object Adapter
-class ObjectAdapter implements PayPal {
+class ObjectAdapter implements PayPalInterface {
     private $stripe;
 
     public function __construct(Stripe $stripe) {
@@ -57,36 +57,36 @@ class ObjectAdapter implements PayPal {
         $this->stripe->setTotalAmount($amount);
     }
 }
+//
+//// Usage
+//$stripe = new class implements Stripe {
+//    private $custCardNo, $cardOwnerName, $cardExpMonthDate, $cvvNo, $totalAmount;
+//
+//    public function getCustCardNo() { return $this->custCardNo; }
+//    public function getCardOwnerName() { return $this->cardOwnerName; }
+//    public function getCardExpMonthDate() { return $this->cardExpMonthDate; }
+//    public function getCVVNo() { return $this->cvvNo; }
+//    public function getTotalAmount() { return $this->totalAmount; }
+//
+//    public function setCustCardNo($custCardNo) { $this->custCardNo = $custCardNo; }
+//    public function setCardOwnerName($cardOwnerName) { $this->cardOwnerName = $cardOwnerName; }
+//    public function setCardExpMonthDate($cardExpMonthDate) { $this->cardExpMonthDate = $cardExpMonthDate; }
+//    public function setCVVNo($cvvNo) { $this->cvvNo = $cvvNo; }
+//    public function setTotalAmount($totalAmount) { $this->totalAmount = $totalAmount; }
+//};
 
-// Usage
-$stripe = new class implements Stripe {
-    private $custCardNo, $cardOwnerName, $cardExpMonthDate, $cvvNo, $totalAmount;
-
-    public function getCustCardNo() { return $this->custCardNo; }
-    public function getCardOwnerName() { return $this->cardOwnerName; }
-    public function getCardExpMonthDate() { return $this->cardExpMonthDate; }
-    public function getCVVNo() { return $this->cvvNo; }
-    public function getTotalAmount() { return $this->totalAmount; }
-
-    public function setCustCardNo($custCardNo) { $this->custCardNo = $custCardNo; }
-    public function setCardOwnerName($cardOwnerName) { $this->cardOwnerName = $cardOwnerName; }
-    public function setCardExpMonthDate($cardExpMonthDate) { $this->cardExpMonthDate = $cardExpMonthDate; }
-    public function setCVVNo($cvvNo) { $this->cvvNo = $cvvNo; }
-    public function setTotalAmount($totalAmount) { $this->totalAmount = $totalAmount; }
-};
-
-$adapter = new ObjectAdapter($stripe);
-$adapter->setCreditCardNo("1234567890123456");
-$adapter->setCustomerName("Max Smith");
-$adapter->setCardExpMonth("06");
-$adapter->setCardExpYear("27");
-$adapter->setCardCVVNo("123");
-$adapter->setAmount(100.50);
-
-echo $adapter->getCreditCardNo() . "\n";
-echo $adapter->getCustomerName() . "\n";
-echo $adapter->getCardExpMonth() . "\n";
-echo $adapter->getCardExpYear() . "\n";
-echo $adapter->getCardCVVNo() . "\n";
-echo $adapter->getAmount() . "\n";
+//$adapter = new ObjectAdapter($stripe);
+//$adapter->setCreditCardNo("1234567890123456");
+//$adapter->setCustomerName("Max Smith");
+//$adapter->setCardExpMonth("06");
+//$adapter->setCardExpYear("27");
+//$adapter->setCardCVVNo("123");
+//$adapter->setAmount(100.50);
+//
+//echo $adapter->getCreditCardNo() . "\n";
+//echo $adapter->getCustomerName() . "\n";
+//echo $adapter->getCardExpMonth() . "\n";
+//echo $adapter->getCardExpYear() . "\n";
+//echo $adapter->getCardCVVNo() . "\n";
+//echo $adapter->getAmount() . "\n";
 
