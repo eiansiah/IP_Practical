@@ -1,5 +1,5 @@
 <?php
-    interface PayPal {
+    interface PayPalInterface {
         public function getCreditCardNo();
         public function getCustomerName();
         public function getCardExpMonth();
