@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts SYSTEM 'Contacts.dtd'> 
+<contacts>
+    <contact personID="P1001">
+        <name>
+            <first>Eddie</first>
+            <first>Sim</first>
+            <middle>Sakai</middle>
+            <last>Lol</last>
+        </name>
+        <phone kind="Home">012-345-6789</phone>
+        <knows></knows>
+    </contact>
+    
+    <contact personID="P1002">
+        <name>
+            <first>Saw Khoo</first>
+            <middle>Zi</middle>
+            <last>Chong</last>
+        </name>
+        <phone kind="Work">033-345-6789</phone>
+        <knows contact="P1001 P1003"/>
+    </contact>
+    
+    <contact personID="P1003">
+        <name>
+            <first>Jane</first>
+            <last>Doe</last>
+        </name>
+        <phone kind="Cell">011-222-3333</phone>
+        <knows/>
+    </contact>
+</contacts>
+

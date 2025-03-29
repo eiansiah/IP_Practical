@@ -1,0 +1,49 @@
+<!-- The root element `contacts` contains zero or more `contact` elements. It represents a list of contacts in the XML document. -->
+<!ELEMENT contacts (contact*)>
+
+<!-- Each `contact` element represents a single person's contact details. 
+     It contains the person's name (`name`), phone number (`phone`), 
+     and relationship with other contact (`knows`)-->
+<!ELEMENT contact (name, phone, knows)>
+
+<!-- The `contact` element has a required attribute `personID`, 
+     which serves as a unique identifier for each contact.-->
+<!ATTLIST contact personID ID #REQUIRED>
+
+<!-- The `name` element stores the full name of a contact. 
+     It contains:
+     - At least one `first` name (`first+` means one or more).
+     - Optional `middle` name (`middle?` means zero or one).
+     - Required `last` name. -->
+<!ELEMENT name (first+, middle?, last)>
+
+<!-- The `first` element contains parsed character data (#PCDATA),
+     representing the first name of the contact. 
+     Since `first+` is defined in `name`, a contact can have multiple first names. -->
+<!ELEMENT first (#PCDATA)>
+
+<!-- The `middle` element, which is optional, contains text data 
+     representing the middle name of the contact. -->
+<!ELEMENT middle (#PCDATA)>
+
+<!-- The `last` element contains text data representing the last name (surname) of the contact. 
+     This is a required part of the `name`. -->
+<!ELEMENT last (#PCDATA)>
+
+<!-- The `phone` element contains text data representing the contact's phone number. 
+     This must be a valid phone number in string format. -->
+<!ELEMENT phone (#PCDATA)>
+
+<!-- The `phone` element has an optional attribute `kind` that specifies the type of phone number. 
+     Possible values: Home, Work, Cell, Fax. The default value is "Home". -->
+<!ATTLIST phone kind (Home | Work | Cell | Fax) "Home">
+
+<!-- The `knows` element is an empty element used to store references to other contacts. 
+     It does not contain text or child elements. -->
+<!ELEMENT knows EMPTY>
+
+<!-- The `knows` element has an optional attribute `contact`, which is of type `IDREFS`. 
+     - This means it can store one or more `personID` values, referencing other contacts.
+     - The `#IMPLIED` keyword means the attribute is optional. -->
+<!ATTLIST knows contact IDREFS #IMPLIED>
+
