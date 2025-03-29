@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE catalog SYSTEM 'bookCatalog.dtd'> 
+<catalog>
+    <book>
+        <title>Introduction to XML</title>
+        <author>John Doe</author>
+        <author>Jane Smith</author>
+        <publisher>XML Press</publisher>
+        <ISBN type="ISBN13">978-1234567890</ISBN>
+    </book>
+</catalog>
+
