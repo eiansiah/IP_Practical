@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT contacts (contact*)>
+<!-- Contain zero or more contact element -->
+
+<!ELEMENT contact (name, phone, knows)>
+<!-- Contains 3 child elements -> name, phone, and knows -->
+
+<!ATTLIST contact personID ID #REQUIRED>
+<!-- Require individual contact with a unique personID attribute -->
+
+<!ELEMENT name (first+, middle?, last)>
+<!-- Contains 3 child elements first (one or more), middle (zero or one), and last name (one) -->
+
+<!ELEMENT first (#PCDATA)>
+<!-- Hold first name components as parsed text data -->
+
+<!ELEMENT middle (#PCDATA)>
+<!-- Hold middle name components as parsed text data -->
+
+<!ELEMENT last (#PCDATA)>
+<!-- Hold last name components as parsed text data -->
+
+<!ELEMENT phone (#PCDATA)>
+<!-- Hold phone components as parsed text data -->
+
+<!ATTLIST phone kind (Home | Work | Cell | Fax) "Home">
+<!-- Phone has an attribute kind (default is "Home") specifying the type -->
+
+<!ELEMENT knows EMPTY>
+<!-- Knows element is an empty element -->
+
+<!ATTLIST knows contact IDREFS #IMPLIED>
+<!-- Represents relationships with other contacts, referencing one or more contact elements via IDREFS -->
