@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="contacts.xsd">
+    <contact personID="c1" gender="male">
+        <name>
+            <first>Ali</first>
+            <middle>Bin</middle>
+            <last>Abu</last>
+        </name>
+        <knows contact="c2 c3"/>
+    </contact>
+    <contact personID="c2" gender="female">
+        <name>
+            <first>Ali</first>
+            <last>Abu</last>
+        </name>
+        <phone kind="Home">234-567-8901</phone>
+        <phone kind="Home">234-567-8901</phone>
+        <phone kind="Home">234-567-8901</phone>
+        <knows contact="c1"/>
+    </contact>
+    <contact personID="c3" gender="male">
+        <name>
+            <first>Ah</first>
+            <first>Beng</first>
+            <middle>Bin</middle>
+            <last>Abu</last>
+        </name>
+        <phone kind="Cell">345-678-9012</phone>
+        <knows contact="c1"/>
+    </contact>
+</contacts>
