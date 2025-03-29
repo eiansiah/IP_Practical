@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "bookcatalog.dtd">
+<catalog>
+    <book>
+        <title>Introduction to XML</title>
+        <author>Ali</author>
+        <author>Abuh</author>
+        <publisher>XML Press</publisher>
+        <ISBN type="ISBN10">8675544339</ISBN>
+    </book> 
+    <book>
+        <title>Advanced XML Techniques</title>
+        <author>Ah Beng</author>
+        <publisher>Tech Books</publisher>
+        <ISBN type="ISBN13">9788332248765</ISBN>
+    </book>
+</catalog>
