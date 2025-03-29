@@ -7,16 +7,24 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:complexType name="contactType">
         <xs:sequence>
             <xs:element name="name" type="nameType" />
-            <xs:element name="phone" type="phoneType" />
+            <xs:element name="phone" type="phoneType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="knows" type="knowsType" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="personID" type="xs:ID" use="required" />
+        <xs:attribute name="gender" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="male" />
+                    <xs:enumeration value="female" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
     </xs:complexType>
-    
+
     <xs:complexType name="nameType">
         <xs:sequence>
             <xs:element name="first" maxOccurs="unbounded" type="xs:string" />
