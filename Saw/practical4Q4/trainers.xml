@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE trainers SYSTEM "trainers.dtd">
+<trainers>
+  <trainer trainerID="T001">
+    <name>Ali Abu</name>
+    <qualifications>
+      <qualification>
+        <title>Master Trainer</title>
+        <institution>Training Academy</institution>
+        <year>2015</year>
+      </qualification>
+      <qualification>
+        <title>Yoga Instructor</title>
+        <institution>Yoga Institute</institution>
+        <year>2018</year>
+      </qualification>
+    </qualifications>
+  </trainer>
+  <trainer trainerID="T002">
+    <name>Sara</name>
+    <qualifications>
+      <qualification>
+        <title>Fitness Expert</title>
+        <institution>Health University</institution>
+        <year>2020</year>
+      </qualification>
+    </qualifications>
+  </trainer>
+</trainers>
