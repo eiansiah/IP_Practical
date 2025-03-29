@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="contacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contact" type="contactType" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="contactType">
+        <xs:sequence>
+            <xs:element name="name" type="nameType" />
+            <xs:element name="phone" type="phoneType" />
+            <xs:element name="knows" type="knowsType" minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="personID" type="xs:ID" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="nameType">
+        <xs:sequence>
+            <xs:element name="first" maxOccurs="unbounded" type="xs:string" />
+            <xs:element name="middle" minOccurs="0" type="xs:string" />
+            <xs:element name="last" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="phoneType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="kind" use="optional">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Home" />
+                            <xs:enumeration value="Work" />
+                            <xs:enumeration value="Cell" />
+                            <xs:enumeration value="Fax" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="knowsType">
+        <xs:sequence />
+        <xs:attribute name="contact" type="xs:IDREFS" />
+    </xs:complexType>
+</xs:schema>
