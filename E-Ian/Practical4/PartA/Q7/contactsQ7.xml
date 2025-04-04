@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='contactsQ7.xsd'>
+
+    <contact personID="P001" gender="Male">
+        <name>
+            <first>Saw</first>
+            <first>Khoo</first>
+            <middle>Zi</middle>
+            <last>Chong</last>
+        </name>
+        <phone kind="Home">0351457895</phone>
+        <phone kind="Cell">0147489587</phone>
+        <knows contact="P002 P003"/>
+    </contact>
+    <contact personID="P002" gender="Female">
+        <name>
+            <first>Sim</first>
+            <middle>Hor</middle>
+            <last>Kang</last>
+        </name>
+        <knows contact="P001 P003"/>
+    </contact>
+    <contact personID="P003" gender="Male">
+        <name>
+            <first>Christopher Yap</first>
+            <last>Jian Xing</last>
+        </name>
+        <phone kind="Cell">0157489588</phone>
+        <knows contact="P001 P002"/>
+    </contact>
+</contacts>

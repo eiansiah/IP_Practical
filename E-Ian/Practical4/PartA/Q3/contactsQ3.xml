@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts SYSTEM "contacts.dtd" >
+<contacts>
+    <contact personID="P001" gender="Male">
+        <name>
+            <first>Saw</first>
+            <first>Khoo</first>
+            <middle>Zi</middle>
+            <last>Chong</last>
+        </name>
+        <phone kind="Home">0351457895</phone>
+        <phone kind="Cell">0147489587</phone>
+        <knows contact="P002 P003"/>
+        <email>sawkhoo@gmail.com</email>
+        <email>sawkhoozichong@gmail.com</email>
+        <website>www.sawkhoo.com</website>   
+    </contact>
+    <contact personID="P002" gender="Female">
+        <name>
+            <first>Sim</first>
+            <middle>Hor</middle>
+            <last>Kang</last>
+        </name>
+        <knows contact="P001 P003"/>
+        <email>eddiesim@gmail.com</email>
+    </contact>
+    <contact personID="P003" gender="Male">
+        <name>
+            <first>Christopher Yap</first>
+            <last>Jian Xing</last>
+        </name>
+        <phone kind="Cell">0157489588</phone>
+        <knows contact="P001 P002"/>
+        <email>christopheryap@gmail.com</email>
+        <website>www.chris.com</website>
+        <website>www.yapjianxing.com</website>
+    </contact>
+</contacts>

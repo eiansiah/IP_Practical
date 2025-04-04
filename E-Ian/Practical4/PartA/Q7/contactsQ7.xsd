@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+
+    <xs:element name="contacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contact" type="contactType" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="contactType">
+        <xs:sequence>
+            <xs:element name="name" type="nameType" maxOccurs="1" />
+            <xs:element name="phone" type="phoneType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="knows" type="knowType" maxOccurs="1"  />
+        </xs:sequence>
+        <xs:attribute name="personID" type="xs:ID" use="required"/>
+        <xs:attribute name="gender" use="required">
+            <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Male" />
+                            <xs:enumeration value="Female" />
+                        </xs:restriction>
+                    </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="nameType">
+        <xs:sequence>
+            <xs:element name="first" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="middle" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="last" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="phoneType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="kind" default="Home">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Home" />
+                            <xs:enumeration value="Work" />
+                            <xs:enumeration value="Cell" />
+                            <xs:enumeration value="Fax" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="knowType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="contact" type="xs:IDREFS" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

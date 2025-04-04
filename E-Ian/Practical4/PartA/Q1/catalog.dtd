@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT catalog (book*)>
+<!ELEMENT book (title, author+, publisher, ISBN)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ATTLIST ISBN type (ISBN10|ISBN13) #REQUIRED>

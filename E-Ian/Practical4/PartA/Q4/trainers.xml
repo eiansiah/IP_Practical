@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE trainers SYSTEM "trainers.dtd" >
+<trainers>
+    <trainer trainerID="T1">
+        <name>John Doe</name>
+        <qualifications>
+            <qualification>
+                <title>Master in PHP</title>
+                <institution>UTM</institution>
+                <year>2015</year>
+            </qualification>
+            <qualification>
+                <title>Certified PHP Programmer</title>
+                <institution>PHP Net</institution>
+                <year>2020</year>
+            </qualification>
+        </qualifications>
+        <qualifications>
+            <qualification>
+                <title>Doctorate in PHP</title>
+                <institution>UTM</institution>
+                <year>2025</year>
+            </qualification>
+        </qualifications>
+    </trainer>
+
+    <trainer trainerID="T2">
+        <name>Eddie Sim</name>
+        <qualifications>
+            <qualification>
+                <title>Bachelor Degree in Java</title>
+                <institution>UM</institution>
+                <year>2011</year>
+            </qualification>
+            <qualification>
+                <title>Certified Java Programmer</title>
+                <institution>Java</institution>
+                <year>2015</year>
+            </qualification>
+        </qualifications>
+        <qualifications>
+            <qualification>
+                <title>Master in Java</title>
+                <institution>UM</institution>
+                <year>2020</year>
+            </qualification>
+        </qualifications>
+    </trainer>
+</trainers>

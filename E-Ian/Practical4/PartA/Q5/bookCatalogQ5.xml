@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalog
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='catalog.xsd'>
+  <book>
+    <title>XML in a Nutshell</title>
+    <author>David Hunter</author>
+    <author>O'Reilly</author>
+    <publisher>O'Reilly</publisher>
+    <ISBN type="ISBN10">8675544339</ISBN>
+  </book>
+  <book>
+    <title>Learning XML</title>
+    <author>Erik T. Ray</author>
+    <publisher>O'Reilly</publisher>
+    <ISBN type="ISBN13">9788332248765</ISBN>
+  </book>
+  <book>
+    <title>XML: The Complete Reference</title>
+    <author>McGraw-Hill</author>
+    <publisher>McGraw-Hill</publisher>
+    <ISBN type="ISBN10">8675576542</ISBN>
+  </book>
+  <book>
+    <title>XML: The Complete Reference</title>
+    <author>McGraw-Hill</author>
+    <publisher>McGraw-Hill</publisher>
+    <ISBN type="ISBN13">9780072124100</ISBN>
+  </book>
+  </catalog>
