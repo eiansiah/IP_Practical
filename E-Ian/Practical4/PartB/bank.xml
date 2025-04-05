@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bank SYSTEM "bank.dtd" >
+<bank>
+    <account>
+        <number>258974185596</number>
+        <balance>580000</balance>
+    </account>
+    <account>
+        <number>258974188547</number>
+        <balance>254788</balance>
+    </account>
+</bank>
