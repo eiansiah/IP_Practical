@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bank>
+  <account>
+    <number>111</number>
+    <balance>2000.00</balance>
+  </account>
+  <account>
+    <number>112</number>
+    <balance>1000.00</balance>
+  </account>
+  <account>
+    <number>113</number>
+    <balance>1200.00</balance>
+  </account>
+</bank>
