@@ -38,6 +38,26 @@
             }
         }
 
-        
+        private function parseDocument() {
+            $parser = xml_parser_create();
+            xml_set_element_handler($parser, array($this, 'startElement'), array($this, 'endElement'));
+            xml_set_character_data_handler($parser, array($this, 'characters'));
+
+            if (!($handle = fopen($this->filename, 'r'))) {
+                die('Could not open XML input');
+            }
+
+            while ($data = fread($handle, 4096)) {
+                xml_parse($parser, $data);
+            }
+        }
+
+        public function printData(){
+            foreach ($this->bank as $account) {
+                echo $account->toString() . "<br/>";
+            }
+        }
     }
+
+    $bankAccount = new SAXParser("bank.xml");
 ?>
