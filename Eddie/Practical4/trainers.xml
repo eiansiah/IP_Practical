@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE trainers SYSTEM "trainers.dtd" >
+<trainers>
+    <trainer trainerID="T1">
+        <name>John Doe</name>
+        <qualifications>
+            <title>Master in PHP</title>
+            <institution>UTM</institution>
+            <year>2015</year>
+        </qualifications>
+        <qualifications>
+            <title>Certified PHP Programmer</title>
+            <institution>PHP Net</institution>
+            <year>2020</year>
+        </qualifications>
+    </trainer>
+</trainers>
