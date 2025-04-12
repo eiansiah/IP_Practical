@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="Food.xsl"?>
+<foodList>
+    <foodItem type="vegetable">
+        <name>Cabbage</name>
+        <carbsPerServing>0</carbsPerServing>
+        <fiberPerServing>1</fiberPerServing>
+        <fatPerServing>0</fatPerServing>
+        <kjPerServing>14</kjPerServing>
+    </foodItem>
+    <foodItem type="fruit">
+        <name>Apple</name>
+        <carbsPerServing>15</carbsPerServing>
+        <fiberPerServing>2.5</fiberPerServing>
+        <fatPerServing>0</fatPerServing>
+        <kjPerServing>250</kjPerServing>
+    </foodItem>
+    <foodItem type="vegetable">
+        <name>Potato</name>
+        <carbsPerServing>21.5</carbsPerServing>
+        <fiberPerServing>2</fiberPerServing>
+        <fatPerServing>1</fatPerServing>
+        <kjPerServing>460</kjPerServing>
+    </foodItem>
+    <foodItem type="grain">
+        <name>Oat</name>
+        <carbsPerServing>62</carbsPerServing>
+        <fiberPerServing>14</fiberPerServing>
+        <fatPerServing>7</fatPerServing>
+        <kjPerServing>1400</kjPerServing>
+    </foodItem>
+    <foodItem type="seafood">
+        <name>Abalone</name>
+        <carbsPerServing>0</carbsPerServing>
+        <fiberPerServing>0</fiberPerServing>
+        <fatPerServing>1</fatPerServing>
+        <kjPerServing>400</kjPerServing>
+    </foodItem>
+    <foodItem type="fruit">
+        <name>Kiwi Fruit</name>
+        <carbsPerServing>7.5</carbsPerServing>
+        <fiberPerServing>2.5</fiberPerServing>
+        <fatPerServing>0</fatPerServing>
+        <kjPerServing>150</kjPerServing>
+    </foodItem>
+    <foodItem type="grain">
+        <name>Wheatgerm</name>
+        <carbsPerServing>1.5</carbsPerServing>
+        <fiberPerServing>1</fiberPerServing>
+        <fatPerServing>0.5</fatPerServing>
+        <kjPerServing>70</kjPerServing>
+    </foodItem>
+</foodList>
